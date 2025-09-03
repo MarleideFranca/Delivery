@@ -52,3 +52,16 @@ Consumidor: processa mensagens da fila
 RabbitMQ localhost: broker confiável e escalável
 
 Assíncrono: permite múltiplos consumidores processando pedidos sem bloquear o sistema
+
+## 🔹 Executando a Aplicação:
+
+ Com o Docker Instalado na sua maquina você vai rodar o comando que vai acrescentar a imagem 
+ do RabbitMQ 
+
+1 - docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+2 - Executar os arquivos:
+    python entrega.py 
+    python pedido.py
+
+
+
