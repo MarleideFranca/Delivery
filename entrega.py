@@ -13,9 +13,9 @@ channel.queue_declare(queue="pedidos")
 def callback(ch, method, properties, body):
     pedido = json.loads(body)
     print(f"[>] Recebido pedido: {pedido}")
-    print(f"🚚 Entregando {pedido['produto']} para {pedido['cliente']}...")
+    print(f"Entregando {pedido['produto']} para {pedido['cliente']}...")
     time.sleep(2)
-    print("✅ Entrega concluída!\n")
+    print("Entrega concluída!\n")
 
 # Consumidor escutando a fila
 channel.basic_consume(queue="pedidos", on_message_callback=callback, auto_ack=True)
